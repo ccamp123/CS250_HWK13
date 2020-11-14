@@ -2,7 +2,7 @@
 {%block title%}Create{%endblock%}
 {%block content%}
 <h3>Fill in the fields below to add a ski to the database</h3>
-<form action="POST">
+<form action="/create" method="POST">
     <label for="Make">Make</label>
     <input type="text" name="Make" id="">
 
@@ -13,6 +13,7 @@
     <input type="number" name="Width" id="">
 
     <label for="Length">Length</label>
-    <input type="number" name="Length" id="">     
+    <input type="number" name="Length" id="">  
+    <input type="submit">   
 </form>  
 {%endblock%}
