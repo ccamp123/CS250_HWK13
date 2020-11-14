@@ -1,5 +1,34 @@
 body{
-    background-color: slategray;
+    background-color: rgb(20, 13, 13);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h2{
+    color: whitesmoke;
+}
+
+p{
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: wheat;
+}
+
+h3{
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+
+label{
+    color: white;
 }
 
 input{

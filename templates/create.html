@@ -1,9 +1,18 @@
 {%extends "base.html"%}
 {%block title%}Create{%endblock%}
 {%block content%}
+<h3>Fill in the fields below to add a ski to the database</h3>
 <form action="POST">
-    <input type="text" id="">
-    <div><input type="text" id=""></div>
-    <div><input type="text" id=""></div>
+    <label for="Make">Make</label>
+    <input type="text" name="Make" id="">
+
+    <label for="Model">Model</label>
+    <input type="text" name="Model" id="">
+
+    <label for="Width">Width</label>
+    <input type="number" name="Width" id="">
+
+    <label for="Length">Length</label>
+    <input type="number" name="Length" id="">     
 </form>  
 {%endblock%}
