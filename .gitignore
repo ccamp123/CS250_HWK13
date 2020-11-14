@@ -1,0 +1,5 @@
+*
+!.gitignore
+!static
+!templates
+!app.py
