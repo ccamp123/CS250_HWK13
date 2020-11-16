@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,redirect
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__,static_url_path='/static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -33,7 +33,28 @@ def create():
 
 @app.route('/read')
 def readPage():
-    return render_template('read.html')
+    resultsList = Ski.query.all()
+    return render_template('read.html', results=resultsList)
 
+@app.route('/update/<n>')
+def updatePage(n):
+    updateItem = Ski.query.filter_by(id=n).first()
+    return render_template('update.html',u=updateItem,updateId=n)   
+@app.route('/update/<n>',methods=['POST'])
+def update(n):
+    temp = Ski.query.filter_by(id=n).first() 
+    temp.make = request.form['make']
+    temp.model = request.form['model']
+    temp.width = request.form['width']
+    temp.length = request.form['length']   
+    db.session.add(temp)
+    db.session.commit()
+    return redirect('/read')
+@app.route('/delete/<n>')
+def deleteEntry(n):
+    tempDel = Ski.query.filter_by(id=n).first()
+    db.session.delete(tempDel)
+    db.session.commit()
+    return redirect('/read')
 if __name__ == "__main__":
     app.run(debug=True)

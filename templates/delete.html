@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+{%block title%}Create{%endblock%}
+{%block content%}
+<h3>Fill in the fields below to update an entry in the database</h3>
+<form action="/delete/{{delId}}" method="POST" id="delForm">
+    <label for="make">Make</label>
+    <input type="text" value ={{d.make}} name="make" id="dMAke">
+
+    <label for="model">Model</label>
+    <input type="text" value={{d.model}} name="model" id="dModel">
+
+    <label for="width">Width</label>
+    <input type="number" value={{d.width}} name="width" id="dWidth">
+
+    <label for="length">Length</label>
+    <input type="number" value={{d.length}} name="length" id="dLength">  
+    <input type="submit">   
+</form>  
+{%endblock%}

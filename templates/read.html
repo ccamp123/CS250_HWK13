@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block title%}Create{%endblock%}
+{%block content%}
+<table>
+    <tr>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Length</th>
+        <th>Width</th>
+    </tr>
+    {%for i in results%}
+        <tr onclick="updateFill(this)"> 
+            <td id='make'>{{i.make}}</td>
+            <td id='model'>{{i.model}}</td>
+            <td id='length'>{{i.length}}</td>
+            <td id='width'>{{i.width}}</td>
+            <td><a  href="/update/{{i.id}}">Update</a></td>
+            <td><a href="/delete/{{i.id}}">Delete</a></td>
+        </tr>
+    {%endfor%}
+</table>
+{%endblock%}
